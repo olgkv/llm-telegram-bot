@@ -1,0 +1,10 @@
+To prepare tea, boil fresh water,
+ then pour it over a tea bag or loose leaves in a cup or pot.
+  Steep for the recommended time—typically 2-5 minutes, but follow the package instructions.
+	 After steeping, remove the tea bag or strain the leaves,
+	and then add any desired milk, sugar, or honey
+
+
+Используйте команду из README, чтобы загрузить его в базу:
+
+    docker exec -it llm_bot_app python -m src.rag data/sample.txt "Тестовый документ"

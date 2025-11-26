@@ -1,17 +1,31 @@
-LLM Telegram Support Bot
+# LLM Telegram Support Bot
 
-Telegram-агент для техподдержки с контекстом диалога и оптимизацией токенов.
+Telegram-агент с памятью диалога и поиском по документам (RAG).
+
+## Запуск за 1 команду
+
+```bash
+make up
+```
+
+## Команды бота
+
+- `/start` - Начать диалог
+- `/clear` - Очистить историю
+- `/stats` - Показать статистику токенов за сегодня
+
+## Загрузка документов
+
+```bash
+docker exec -it llm_bot_app python -m src.rag path/to/file.txt "Название документа"
+```
+
+Где `path/to/file.txt` — путь к текстовому файлу в корне проекта (он монтируется в контейнер как `/app`).
 
 ## Технологии
-- Python 3.11+
-- aiogram 3.x
-- FastAPI
-- PostgreSQL
-- OpenAI API
 
-## Локальный запуск
-1. `cp .env.example .env` и добавь токены
-2. `pip install -r requirements.txt`
-3. `python src/bot.py`
-
-## Деплой
+- Python 3.13, aiogram 3.x, SQLAlchemy 2.0
+- PostgreSQL + pgvector
+- OpenAI GPT-4o-mini + эмбеддинги
+- tiktoken (оптимизация токенов)
+- Docker Compose
