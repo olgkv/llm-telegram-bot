@@ -53,7 +53,7 @@ async def cmd_clear(message: types.Message):
     await message.answer("✅ История диалога очищена (в dev-режиме)")
 
 
-@dp.message(Command("stats"))
+@dp.message(Command("stats", "stat"))
 async def cmd_stats(message: types.Message):
     """Показывает статистику использования токенов за сегодня"""
     tg_user = message.from_user
